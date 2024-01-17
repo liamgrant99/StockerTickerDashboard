@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Ticker Dashboard</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename='style.css') }}">
+    <!-- Denoting jquery from a link. Loading the script-->
+    <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Loading our javascript file-->
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+    <!-- These are for the chart additions -->
+    <script src= "https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <form id = "create-ticker-form">
+        <!-- Where users will input their stock. Required key word means user must input the text-->
+        <input type="text" id="new-ticker" placeholder="Add Ticker" required>
+        <button type="submit">Add</button>
+    </form>
+    <!-- Our timer-->
+    <p id = "timer">Next update in <span id="counter"></span> seconds.</p>
+    <!-- Where our tickers go-->
+    <div id= "tickers-grid"></div>
+</body>
+</html>
